@@ -19,7 +19,7 @@
 class STTTranscription
 {
 public:
-    int startRecording(void (*updateText)(char *transcription), const std::string &url, const std::string &language, bool manualPunctuation);
+    int startRecording(void (*updateText)(char *transcription), const std::string &url, const std::string &language, bool manualPunctuation, const std::string &domain);
     int stopRecording();
     // void wsThread(client &c);
     void clearConsole();

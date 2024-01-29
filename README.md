@@ -43,7 +43,7 @@ g++ ./STTTranscription.o ./main.o -o client \
 ## Run
 
 ```bash
-./client <URL> <LANGUAGE> <MANUAL_PUNCTUATION> (0|1)
+./client <URL> <LANGUAGE> <MANUAL_PUNCTUATION> (0|1) <DOMAIN>
 
-# Example: ./client wss://40.114.149.255/real-time-transcription/ fr 0
+# Example: ./client wss://40.114.149.255/real-time-transcription/ fr 0 gynécologie
 ```

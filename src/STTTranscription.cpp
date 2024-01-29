@@ -123,7 +123,8 @@ void wsThread(client &c)
     }
 }
 
-int STTTranscription::startRecording(void (*updateText)(char *), const std::string &url, const std::string &language, bool manualPunctuation)
+int STTTranscription::startRecording(void (*updateText)(char *), const std::string &url, const std::string &language, bool manualPunctuation,
+                                     const std::string &domain)
 {
 
     PaError err = Pa_Initialize();
@@ -166,6 +167,7 @@ int STTTranscription::startRecording(void (*updateText)(char *), const std::stri
         nlohmann::json initConfig;
         initConfig["language"] = language;
         initConfig["manual_punctuation"] = manualPunctuation;
+        initConfig["domain"] = domain;
         std::string initMessage = initConfig.dump();
         global_hdl = hdl;
         c.send(hdl, initMessage, websocketpp::frame::opcode::text);
